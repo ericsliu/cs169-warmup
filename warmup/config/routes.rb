@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resource :users do
     post 'add', to: 'users#add'
+    post 'login', to: 'users#login'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -29,4 +29,10 @@ class User < ActiveRecord::Base
     end
   end
 
+  def self.login(name, pw)
+    user = self.find_by(user: name)
+    user[:count] += 1
+    user.save
+  end
+
 end
