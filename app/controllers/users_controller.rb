@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   # GET /users
   # GET /users.json
@@ -7,8 +6,6 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
-  # GET /users/1
-  # GET /users/1.json
   def show
   end
 
@@ -30,10 +27,10 @@ class UsersController < ApplicationController
       countuser = User.find_by(user: user)
       count = countuser[:count]
       json = { "count" => count, "errCode" => 1}
-      render json: json
+      render status: 200, json: json
     else
       json = { "errCode" => code }
-      render json: json
+      render status: 200, json: json
     end
   end
 
@@ -44,17 +41,17 @@ class UsersController < ApplicationController
     login_user = User.find_by(user: user)
     if login_user.nil?
       json = { "errCode" => -1 }
-      render json: json
+      render status: 200, json: json
     else
       if login_user[:password] != password
         json = { "errCode" => -1 }
-        render json: json
+        render status: 200, json: json
       else
         User.login(user, password)
         count = User.find_by(user: user)
         count = count[:count]
         json = { "count" => count, "errCode" => 1 }
-        render json: json
+        render status: 200, json: json
       end
     end
   end

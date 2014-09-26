@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :users
 
   resource :users do
     post 'add', to: 'users#add'
@@ -7,8 +6,8 @@ Rails.application.routes.draw do
   end
 
   resource :testapi do
-    post 'resetFixture', to: 'testapi#reset_fixture'
-    post 'unitTests', to: 'testapi#unit_tests'
+    post 'resetfixture', to: 'testapi#reset_fixture'
+    post 'unittests', to: 'testapi#unit_tests'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

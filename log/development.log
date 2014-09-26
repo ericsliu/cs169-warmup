@@ -2888,3 +2888,1354 @@ Can't verify CSRF token authenticity
   [1m[36m (10.0ms)[0m  [1mCOMMIT[0m
   [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1
 Completed 200 OK in 16ms (Views: 0.2ms | ActiveRecord: 11.3ms)
+
+
+Started POST "/users/add" for 127.0.0.1 at 2014-09-26 06:20:13 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#add as */*
+  Parameters: {"user"=>"test3", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Completed 200 OK in 22ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2014-09-26 06:20:32 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>"test3", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."user" = 'test3' AND "users"."id" != 12) LIMIT 1
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE "users" SET "count" = $1, "updated_at" = $2 WHERE "users"."id" = 12[0m  [["count", 3], ["updated_at", "2014-09-26 13:20:32.415484"]]
+  [1m[35m (3.8ms)[0m  COMMIT
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1[0m
+Completed 200 OK in 21ms (Views: 0.3ms | ActiveRecord: 6.0ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2014-09-26 06:20:33 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>"test3", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."user" = 'test3' AND "users"."id" != 12) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "count" = $1, "updated_at" = $2 WHERE "users"."id" = 12  [["count", 4], ["updated_at", "2014-09-26 13:20:33.506592"]]
+  [1m[36m (3.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2014-09-26 06:20:34 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>"test3", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.1ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."user" = 'test3' AND "users"."id" != 12) LIMIT 1
+  [1m[36mSQL (0.1ms)[0m  [1mUPDATE "users" SET "count" = $1, "updated_at" = $2 WHERE "users"."id" = 12[0m  [["count", 5], ["updated_at", "2014-09-26 13:20:34.044406"]]
+  [1m[35m (3.4ms)[0m  COMMIT
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1[0m
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2014-09-26 06:20:34 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>"test3", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.2ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."user" = 'test3' AND "users"."id" != 12) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "count" = $1, "updated_at" = $2 WHERE "users"."id" = 12  [["count", 6], ["updated_at", "2014-09-26 13:20:34.475690"]]
+  [1m[36m (3.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1
+Completed 200 OK in 9ms (Views: 0.3ms | ActiveRecord: 5.0ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 06:40:47 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [POST] "/TESTAPI/resetFixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.4ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.6ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (20.3ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 06:40:48 -0700
+
+ActionController::RoutingError (No route matches [POST] "/TESTAPI/resetFixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (18.2ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 06:42:16 -0700
+
+ActionController::RoutingError (No route matches [POST] "/TESTAPI/resetFixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.7ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (28.3ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 06:42:16 -0700
+
+ActionController::RoutingError (No route matches [POST] "/TESTAPI/resetFixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.5ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (16.7ms)
+
+
+Started GET "/users/add" for 127.0.0.1 at 2014-09-26 06:49:59 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"add"}
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."id" = $1 LIMIT 1  [["id", 0]]
+Completed 404 Not Found in 13ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with 'id'=add):
+  app/controllers/users_controller.rb:105:in `set_user'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.3ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (15.1ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 06:52:24 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [POST] "/TESTAPI/resetFixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.4ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.5ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (18.7ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 06:52:24 -0700
+
+ActionController::RoutingError (No route matches [POST] "/TESTAPI/resetFixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.1ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.2ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (16.9ms)
+
+
+Started GET "/users/add" for 127.0.0.1 at 2014-09-26 06:52:29 -0700
+
+ActionController::RoutingError (No route matches [GET] "/users/add"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.7ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (14.0ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 06:53:22 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [POST] "/TESTAPI/resetFixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.6ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.4ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (18.8ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 06:53:23 -0700
+
+ActionController::RoutingError (No route matches [POST] "/TESTAPI/resetFixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.0ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (13.5ms)
+
+
+Started GET "/users/add" for 127.0.0.1 at 2014-09-26 06:53:24 -0700
+Processing by UsersController#add as HTML
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."user" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Completed 500 Internal Server Error in 25ms
+
+NoMethodError (undefined method `length' for nil:NilClass):
+  app/models/user.rb:24:in `add'
+  app/controllers/users_controller.rb:25:in `add'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.6ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (10.1ms)
+
+
+Started GET "/users/add" for 127.0.0.1 at 2014-09-26 06:55:06 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by UsersController#add as HTML
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE "users"."user" IS NULL LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  ROLLBACK
+Completed 200 OK in 26ms (Views: 0.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users/add" for 127.0.0.1 at 2014-09-26 06:55:07 -0700
+Processing by UsersController#add as HTML
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.3ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."user" IS NULL LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m
+Completed 200 OK in 4ms (Views: 0.1ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 06:55:11 -0700
+
+ActionController::RoutingError (No route matches [POST] "/TESTAPI/resetFixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.1ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (20.4ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 06:55:11 -0700
+
+ActionController::RoutingError (No route matches [POST] "/TESTAPI/resetFixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.7ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (16.6ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 06:56:42 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [POST] "/TESTAPI/resetFixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.5ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (19.1ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 06:56:42 -0700
+
+ActionController::RoutingError (No route matches [POST] "/TESTAPI/resetFixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.7ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (19.8ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2014-09-26 06:56:58 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>"test3", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."user" = 'test3' AND "users"."id" != 12) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "count" = $1, "updated_at" = $2 WHERE "users"."id" = 12  [["count", 7], ["updated_at", "2014-09-26 13:56:58.173991"]]
+  [1m[36m (9.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1
+Completed 200 OK in 39ms (Views: 0.3ms | ActiveRecord: 13.4ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2014-09-26 06:57:04 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>"test3", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.2ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."user" = 'test3' AND "users"."id" != 12) LIMIT 1
+  [1m[36mSQL (0.2ms)[0m  [1mUPDATE "users" SET "count" = $1, "updated_at" = $2 WHERE "users"."id" = 12[0m  [["count", 8], ["updated_at", "2014-09-26 13:57:04.400255"]]
+  [1m[35m (3.6ms)[0m  COMMIT
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1[0m
+Completed 200 OK in 8ms (Views: 0.1ms | ActiveRecord: 4.7ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2014-09-26 06:57:05 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>"test3", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."user" = 'test3' AND "users"."id" != 12) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "count" = $1, "updated_at" = $2 WHERE "users"."id" = 12  [["count", 9], ["updated_at", "2014-09-26 13:57:05.330890"]]
+  [1m[36m (14.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1
+Completed 200 OK in 20ms (Views: 0.2ms | ActiveRecord: 15.9ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 06:57:08 -0700
+
+ActionController::RoutingError (No route matches [POST] "/TESTAPI/resetFixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.7ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (14.0ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 06:57:08 -0700
+
+ActionController::RoutingError (No route matches [POST] "/TESTAPI/resetFixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.7ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (13.9ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 06:57:54 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [POST] "/TESTAPI/resetFixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.6ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (19.4ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 06:57:54 -0700
+
+ActionController::RoutingError (No route matches [POST] "/TESTAPI/resetFixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (19.4ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 06:57:57 -0700
+
+ActionController::RoutingError (No route matches [POST] "/TESTAPI/resetFixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.7ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (13.3ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 06:57:57 -0700
+
+ActionController::RoutingError (No route matches [POST] "/TESTAPI/resetFixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (15.4ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2014-09-26 06:58:01 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>"test3", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.5ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mUser Exists (0.3ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."user" = 'test3' AND "users"."id" != 12) LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m  UPDATE "users" SET "count" = $1, "updated_at" = $2 WHERE "users"."id" = 12  [["count", 10], ["updated_at", "2014-09-26 13:58:01.272534"]]
+  [1m[36m (3.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1
+Completed 200 OK in 32ms (Views: 0.3ms | ActiveRecord: 7.4ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 06:59:04 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [POST] "/TESTAPI/resetFixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.8ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.5ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (19.2ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 06:59:04 -0700
+
+ActionController::RoutingError (No route matches [POST] "/TESTAPI/resetFixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.9ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (13.6ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 06:59:09 -0700
+
+ActionController::RoutingError (No route matches [POST] "/TESTAPI/resetFixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.7ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (14.8ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 06:59:09 -0700
+
+ActionController::RoutingError (No route matches [POST] "/TESTAPI/resetFixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.8ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.2ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (15.0ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2014-09-26 06:59:36 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>"test3", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+  [1m[35mUser Load (0.6ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.4ms)[0m  [1mSELECT  1 AS one FROM "users"  WHERE ("users"."user" = 'test3' AND "users"."id" != 12) LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m  UPDATE "users" SET "count" = $1, "updated_at" = $2 WHERE "users"."id" = 12  [["count", 11], ["updated_at", "2014-09-26 13:59:36.705097"]]
+  [1m[36m (3.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1
+Completed 200 OK in 35ms (Views: 0.3ms | ActiveRecord: 7.9ms)
+
+
+Started POST "/users/login" for 127.0.0.1 at 2014-09-26 06:59:37 -0700
+Processing by UsersController#login as */*
+  Parameters: {"user"=>"test3", "password"=>"[FILTERED]"}
+Can't verify CSRF token authenticity
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.4ms)[0m  SELECT  1 AS one FROM "users"  WHERE ("users"."user" = 'test3' AND "users"."id" != 12) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mUPDATE "users" SET "count" = $1, "updated_at" = $2 WHERE "users"."id" = 12[0m  [["count", 12], ["updated_at", "2014-09-26 13:59:37.501934"]]
+  [1m[35m (3.7ms)[0m  COMMIT
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."user" = 'test3' LIMIT 1[0m
+Completed 200 OK in 11ms (Views: 0.2ms | ActiveRecord: 5.4ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 06:59:57 -0700
+
+ActionController::RoutingError (No route matches [POST] "/TESTAPI/resetFixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.0ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.3ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.7ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (15.0ms)
+
+
+Started POST "/testapi/resetFixture" for 127.0.0.1 at 2014-09-26 07:04:27 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TestapiController#reset_fixture as */*
+  Parameters: {"user"=>"test3", "password"=>"[FILTERED]", "testapi"=>{"user"=>"test3", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity
+  [1m[35mSQL (4.0ms)[0m  DELETE FROM "users"
+Completed 500 Internal Server Error in 14ms
+
+NoMethodError (undefined method `¦' for #<TestapiController:0x00000005874ce0>):
+  app/controllers/testapi_controller.rb:5:in `reset_fixture'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_source.erb (0.5ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.7ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/diagnostics.erb within rescues/layout (13.4ms)
+
+
+Started POST "/testapi/resetFixture" for 127.0.0.1 at 2014-09-26 07:05:33 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TestapiController#reset_fixture as */*
+  Parameters: {"user"=>"test3", "password"=>"[FILTERED]", "testapi"=>{"user"=>"test3", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "users"
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 07:06:23 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [POST] "/testapi/resetfixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.9ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.1ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.7ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (19.5ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 07:06:49 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [POST] "/testapi/resetfixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.0ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.5ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (18.9ms)
+
+
+Started POST "/testapi/resetFixture" for 127.0.0.1 at 2014-09-26 07:07:41 -0700
+
+ActionController::RoutingError (No route matches [POST] "/testapi/resetfixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (1.4ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.9ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (0.8ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (20.5ms)
+
+
+Started POST "/testapi/resetFixture" for 127.0.0.1 at 2014-09-26 07:08:51 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+ActionController::RoutingError (No route matches [POST] "/testapi/resetfixture"):
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (0.7ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_route.html.erb (1.4ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.5ms)
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (18.3ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 07:09:46 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by TestapiController#reset_fixture as */*
+  Parameters: {"user"=>"test3", "password"=>"[FILTERED]", "testapi"=>{"user"=>"test3", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity
+  [1m[35mSQL (0.3ms)[0m  DELETE FROM "users"
+Completed 200 OK in 9ms (Views: 0.2ms | ActiveRecord: 0.3ms)
+
+
+Started POST "/testapi/resetFixture" for 127.0.0.1 at 2014-09-26 07:09:48 -0700
+Processing by TestapiController#reset_fixture as */*
+  Parameters: {"user"=>"test3", "password"=>"[FILTERED]", "testapi"=>{"user"=>"test3", "password"=>"[FILTERED]"}}
+Can't verify CSRF token authenticity
+  [1m[36mSQL (0.2ms)[0m  [1mDELETE FROM "users"[0m
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 07:09:55 -0700
+Processing by TestapiController#reset_fixture as HTML
+  Parameters: {"testapi"=>{}}
+Can't verify CSRF token authenticity
+  [1m[35mSQL (0.2ms)[0m  DELETE FROM "users"
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/users/add" for 127.0.0.1 at 2014-09-26 07:09:55 -0700
+Processing by UsersController#add as HTML
+  Parameters: {"password"=>"[FILTERED]", "user"=>"user1"}
+Can't verify CSRF token authenticity
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM "users"  WHERE "users"."user" = 'user1' LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO "users" ("count", "created_at", "password", "updated_at", "user") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["count", 1], ["created_at", "2014-09-26 14:09:55.569737"], ["password", "password"], ["updated_at", "2014-09-26 14:09:55.569737"], ["user", "user1"]]
+  [1m[35m (3.5ms)[0m  COMMIT
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT  "users".* FROM "users"  WHERE "users"."user" = 'user1' LIMIT 1[0m
+Completed 200 OK in 23ms (Views: 0.2ms | ActiveRecord: 6.7ms)
+
+
+Started POST "/TESTAPI/resetFixture" for 127.0.0.1 at 2014-09-26 07:09:55 -0700
+Processing by TestapiController#reset_fixture as HTML
+  Parameters: {"testapi"=>{}}
+Can't verify CSRF token authenticity
+  [1m[35mSQL (2.0ms)[0m  DELETE FROM "users"
+Completed 200 OK in 3ms (Views: 0.2ms | ActiveRecord: 2.0ms)
+
+
+Started POST "/TESTAPI/unitTests" for 127.0.0.1 at 2014-09-26 07:09:55 -0700
+Processing by TestapiController#unit_tests as HTML
+  Parameters: {"testapi"=>{}}
+Can't verify CSRF token authenticity
+Completed 500 Internal Server Error in 5ms
+
+ActionView::MissingTemplate (Missing template testapi/unit_tests, application/unit_tests with {:locale=>[:en], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :jbuilder, :coffee]}. Searched in:
+  * "/home/ericsliu/cs169/cs169-warmup/app/views"
+):
+  actionview (4.1.6) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.1.6) lib/action_view/lookup_context.rb:124:in `find'
+  actionview (4.1.6) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.1.6) lib/action_view/renderer/template_renderer.rb:41:in `determine_template'
+  actionview (4.1.6) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.1.6) lib/action_view/renderer/renderer.rb:42:in `render_template'
+  actionview (4.1.6) lib/action_view/renderer/renderer.rb:23:in `render'
+  actionview (4.1.6) lib/action_view/rendering.rb:99:in `_render_template'
+  actionpack (4.1.6) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.1.6) lib/action_view/rendering.rb:82:in `render_to_body'
+  actionpack (4.1.6) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.1.6) lib/action_controller/metal/renderers.rb:32:in `render_to_body'
+  actionpack (4.1.6) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.1.6) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:41:in `block (2 levels) in render'
+  activesupport (4.1.6) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.1.6) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:41:in `block in render'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:84:in `cleanup_view_runtime'
+  activerecord (4.1.6) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:40:in `render'
+  actionpack (4.1.6) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.1.6) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.1.6) lib/abstract_controller/base.rb:189:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.1.6) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:113:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:229:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:229:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:166:in `block in halting'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:86:in `call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:86:in `run_callbacks'
+  actionpack (4.1.6) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:31:in `block in process_action'
+  activesupport (4.1.6) lib/active_support/notifications.rb:159:in `block in instrument'
+  activesupport (4.1.6) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.1.6) lib/active_support/notifications.rb:159:in `instrument'
+  actionpack (4.1.6) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.1.6) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.1.6) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.1.6) lib/abstract_controller/base.rb:136:in `process'
+  actionview (4.1.6) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.1.6) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.1.6) lib/action_controller/metal.rb:232:in `block in action'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:82:in `dispatch'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:50:in `call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:73:in `block in call'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `each'
+  actionpack (4.1.6) lib/action_dispatch/journey/router.rb:59:in `call'
+  actionpack (4.1.6) lib/action_dispatch/routing/route_set.rb:678:in `call'
+  route_downcaser (0.2.1) lib/route_downcaser/downcase_route_middleware.rb:21:in `call'
+  rack (1.5.2) lib/rack/etag.rb:23:in `call'
+  rack (1.5.2) lib/rack/conditionalget.rb:35:in `call'
+  rack (1.5.2) lib/rack/head.rb:11:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/flash.rb:254:in `call'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.5.2) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.1.6) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:621:in `call'
+  activerecord (4.1.6) lib/active_record/migration.rb:380:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.1.6) lib/active_support/callbacks.rb:82:in `run_callbacks'
+  actionpack (4.1.6) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/remote_ip.rb:76:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.1.6) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.1.6) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.1.6) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.5.2) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.5.2) lib/rack/runtime.rb:17:in `call'
+  activesupport (4.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:26:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  actionpack (4.1.6) lib/action_dispatch/middleware/static.rb:64:in `call'
+  rack (1.5.2) lib/rack/sendfile.rb:112:in `call'
+  railties (4.1.6) lib/rails/engine.rb:514:in `call'
+  railties (4.1.6) lib/rails/application.rb:144:in `call'
+  rack (1.5.2) lib/rack/lock.rb:17:in `call'
+  rack (1.5.2) lib/rack/content_length.rb:14:in `call'
+  rack (1.5.2) lib/rack/handler/webrick.rb:60:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /home/ericsliu/.rvm/rubies/ruby-2.1.3/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /home/ericsliu/.rvm/gems/ruby-2.1.3/gems/actionpack-4.1.6/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (1.0ms)

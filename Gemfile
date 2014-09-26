@@ -14,6 +14,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 gem 'rspec-rails'
 gem 'pg'
+gem 'route_downcaser'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
