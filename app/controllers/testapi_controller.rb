@@ -9,6 +9,9 @@ class TestapiController < ApplicationController
 
   # POST /TESTAPI/unitTests
   def unit_tests
+    output = `#{'rspec'}`
+    json = { "output" => output }
+    render status: 200, json: json
   end 
 
 end
