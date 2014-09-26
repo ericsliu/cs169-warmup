@@ -43,10 +43,19 @@ RSpec.describe UsersController, :type => :controller do
   let(:valid_session) { {} }
 
   describe "POST add" do
-    describe "with valid parms" do
+    describe "with valid params" do
       it "creates a new user" do
         expect(User).to receive(:add)
         post :add, { "user" => "testuser" }, valid_session
+      end
+    end
+  end
+
+  describe "POST login" do
+    describe "with valid params" do
+      it "checks if user exists" do
+        expect(User).to receive(:find_by)
+        post :login, { "user" => "testuser" }, valid_session
       end
     end
   end
