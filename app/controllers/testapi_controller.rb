@@ -10,7 +10,10 @@ class TestapiController < ApplicationController
   # POST /TESTAPI/unitTests
   def unit_tests
     output = `#{'rspec'}`
-    json = { "output" => output }
+    split_output = output.split("\n")
+    results = split_output[split_output.length - 1]
+    counts = results.split(", ")
+    json = { "output" => output, "totalTests" => counts[0][0], "nrFailed" => counts[1][0] }
     render status: 200, json: json
   end 
 
