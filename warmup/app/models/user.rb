@@ -13,9 +13,9 @@ class User < ActiveRecord::Base
 
   def self.add(name, pw)
     user = User.new
-    user.username = name
-    user.password = pw
-    user.count = 1
+    user[:user] = name
+    user[:password] = pw
+    user[:count] = 1
     if user.save
       return SUCCESS
     else
@@ -25,6 +25,7 @@ class User < ActiveRecord::Base
         return ERR_BAD_PASSWORD
       else
         return ERR_USER_EXISTS
+      end
     end
   end
 

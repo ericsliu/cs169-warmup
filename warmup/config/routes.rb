@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :users
 
   resource :users do
-    post 'add', to: 'users#create'
+    post 'add', to: 'users#add'
   end
 
   # The priority is based upon order of creation: first created -> highest priority.

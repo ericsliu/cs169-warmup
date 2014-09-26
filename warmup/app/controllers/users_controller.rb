@@ -25,7 +25,16 @@ class UsersController < ApplicationController
   def add
     user = params[:user]
     password = params[:password]
-    User.add(user, password)
+    code = User.add(user, password)
+    if code == 1
+      countuser = User.find_by(user: user)
+      count = countuser[:count]
+      json = { "count" => count, "errCode" => 1}
+      render json: json
+    else
+      json = { "errCode" => code }
+      render json: json
+    end
   end
 
   # POST /users
@@ -76,6 +85,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:user, :password, :count)
+      params.require(:user).permit(:user, :password)
     end
 end
