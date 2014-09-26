@@ -21,7 +21,7 @@ class User < ActiveRecord::Base
     if user.save
       return SUCCESS
     else
-      if name.nil? || name.length > MAX_USERNAME_LENGTH
+      if name.nil? || name.length == 0 || name.length > MAX_USERNAME_LENGTH
         return ERR_BAD_USERNAME
       elsif !pw.nil? && pw.length > MAX_PASSWORD_LENGTH
         return ERR_BAD_PASSWORD
