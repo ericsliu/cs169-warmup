@@ -1,29 +1,141 @@
-<h1>Listing users</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>User</th>
-      <th>Password</th>
-      <th>Count</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @users.each do |user| %>
-      <tr>
-        <td><%= user.user %></td>
-        <td><%= user.password %></td>
-        <td><%= user.count %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
-<%= link_to 'New User', new_user_path %>
+  <title>Counter app</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.0-rc.4/angular.js"></script>
+  <script type="text/javascript">
+    angular.module("userManager", [])
+      .controller("loginController", function($scope, $http) {
+        var SUCCESS = 1;
+        var ERR_BAD_CREDENTIALS = -1;
+        var ERR_USER_EXISTS = -2;
+        var ERR_BAD_USERNAME = -3;
+        var ERR_BAD_PASSWORD = -4;
+        var MAX_USERNAME_LENGTH = 128;
+        var MAX_PASSWORD_LENGTH = 128;
+        $scope.name = "";
+        $scope.loginCount = 0;
+        $scope.username = "";
+        $scope.password = "";
+        $scope.showMessage = false;
+        $scope.showErrorMessage = false;
+        $scope.errorMessage = "";
+        $scope.login = function() {
+          $http({
+            method: 'POST',
+            url: '/users/login',
+            params: {
+              user: $scope.username,
+              password: $scope.password
+            }
+          }).
+            success(function(data, status, headers, config) {
+              console.log(data);
+              console.log("SUCCESS");
+              if (data.errCode == SUCCESS) {
+                $scope.name = $scope.username;
+                $scope.loginCount = data.count;
+                $scope.showMessage = true;
+                $scope.showErrorMessage = false;
+              }
+              else {
+                $scope.showMessage = false;
+                $scope.showErrorMessage = true;
+                $scope.errorMessage = "Cannot find user/password pair in database";
+              }
+            }).
+            error(function(data, status, headers, config) {
+              console.log(data);
+              console.log("ERROR");
+            });
+        }
+        $scope.register = function() {
+          $http({
+            method: 'POST',
+            url: '/users/add',
+            params: {
+              user: $scope.username,
+              password: $scope.password
+            }
+          }).
+            success(function(data, status, headers, config) {
+              console.log(data);
+              console.log("SUCCESS");
+              if (data.errCode == SUCCESS) {
+                $scope.showMessage = false;
+                $scope.showErrorMessage = false;
+                alert("User " + $scope.username + " created!");
+              }
+              else if (data.errCode == ERR_USER_EXISTS) {
+                $scope.showMessage = false;
+                $scope.showErrorMessage = true;
+                $scope.errorMessage = "Trying to add a user that already exists.";
+              }
+              else if (data.errCode == ERR_BAD_USERNAME) {
+                $scope.showMessage = false;
+                $scope.showErrorMessage = true;
+                $scope.errorMessage = "Invalid user name.";
+              }
+              else if (data.errCode == ERR_BAD_PASSWORD) {
+                $scope.showMessage = false;
+                $scope.showErrorMessage = true;
+                $scope.errorMessage = "Invalid password name.";
+              }
+            }).
+            error(function(data, status, headers, config) {
+              console.log(data);
+              console.log("ERROR");
+            });
+        }
+      })
+  </script>
+  <style>
+  body {
+    background-color: #eee;
+  }
+  #loginScreen {
+    width: 20em;
+    height: 20em;
+    margin-top: 8em;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    vertical-align: center;
+  }
+  form {
+    font-size: 1.4em;
+  }
+  input {
+    width: 100%;
+  }
+  button {
+    width: 100%;
+    background-color: #06f;
+    border-radius: 0.2em;
+    border: none;
+    font-size: 1.2em;
+  }
+  </style>
+</head>
+<body data-ng-app="userManager">
+  <div id="loginScreen" data-ng-controller="loginController">
+    <form>
+      Username
+      <br/>
+      <input type="text" id="username" data-ng-model="username">
+      <br/>
+      Password
+      <br/>
+      <input type="password" id="password" data-ng-model="password">
+      <br/>
+      <br/>
+      <button data-ng-click="login()">Login</button>
+      <br/>
+      <button data-ng-click="register()">Register</button>
+    </form>
+    <br/>
+    <div id="countScreen" data-ng-show="showMessage">
+      Hi {{name}}! You've logged in {{loginCount}} times.
+    </div>
+    <div id="errorScreen" data-ng-show="showErrorMessage">
+      {{errorMessage}}
+    </div>
+  </div>
+</body>
